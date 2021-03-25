@@ -1,0 +1,352 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    min-width: 320px;
+    color: #1d1d1d;
+    display: flex;
+    flex-direction: column;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.global__wrapper {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.global__wrapper {
+    /*min-height: calc(100vh - 133px);*/
+}
+
+
+a.active.focus,
+a.active:focus,
+a.focus,
+a:active.focus,
+a:active:focus,
+a:focus,
+input:focus, input:active,
+button.active.focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button:active:focus,
+button:focus,
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+    outline: 0 !important;
+    outline-color: transparent !important;
+    outline-style: none !important;
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0) !important;
+}
+
+.form-control:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    background: #F1F5F7 !important;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h3 {
+    font-style: italic;
+    font-size: 42px;
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+}
+
+h4 {
+    font-weight: 600;
+    font-size: 44px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.super {
+    font-size: 65px;
+}
+
+.scrollToTop {
+    position: fixed;
+    bottom: 60px;
+    right: 50px;
+    border-radius: 4px;
+    display: none;
+    font-size: 32px;
+    height: 50px;
+    width: 50px;
+    z-index: 1001;
+    color: #fff;
+    transition: all .5s;
+    background-color: #da1757;
+    border: 0;
+    cursor: pointer;
+}
+
+.scrollToTop:hover {
+    background-color: #fff;
+    text-decoration: none;
+    outline: none;
+    color: #da1757;
+    border: 1px solid #da1757;
+}
+
+.icons {
+    display: none;
+}
+
+#baguetteBox-overlay {
+    display: none;
+}
+
+
+/* =============================header============================== */
+.main-header {
+    background: #6c757d30;
+    /*background: url(/images/banner_head7.jpg) center no-repeat;*/
+    /*background-size: cover;*/
+}
+
+.main-header .navbar-toggler {
+    color: #fff;
+}
+
+.main-header .navbar-brand,
+.main-header ul li a {
+    color: #1c22ff;
+    font-weight: 600;
+}
+
+.main-header ul.navbar-nav {
+    /*margin-right: 50px;*/
+    margin-right: unset;
+}
+
+.main-header .navbar-nav > li {
+    margin-right: 40px;
+}
+
+.main-header .navbar-brand {
+    font-size: 38px;
+    /*margin-left: 50px;*/
+    margin-left: unset;
+}
+
+.main-header ul li a {
+    font-size: 17px;
+}
+
+.main-header ul li a::after {
+    content: '';
+    display: block;
+    width: 100%;
+    background-color: #ffbc0c;
+    height: 1px;
+    transform: scale(0);
+    transition: all .3s;
+}
+
+.main-header ul li a:hover::after {
+    transform: scale(1);
+}
+.nav-link:hover{
+    color: #ffbc0c;
+    transition: 0.5s;
+}
+
+.main-header-text {
+    color: #fff;
+    padding: 140px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+header.other {
+    display: flex;
+    justify-content: center;
+}
+
+header.other nav.navbar-expand-lg {
+    width: 100%;
+    max-width: 1140px;
+}
+
+header.other a.navbar-brand {
+    margin-left: 0;
+}
+
+header.other ul.navbar-nav {
+    margin-right: 0;
+}
+
+header.other .navbar-nav > li {
+    margin-left: 40px;
+    margin-right: 0;
+}
+/* =============================base============================== */
+.base .first_text{
+    padding: 0 100px;
+    text-align: center;
+    /*background: #009fff21;*/
+    background: url("../img/banner/queries.jpg") no-repeat center center;
+    background-size: cover;
+    height: 370px;
+    display: flex;
+    align-items: flex-end;
+}
+.boxsql{
+    background: #000000d4;
+    color: white;
+    box-shadow: 0px 2px 7px 10px #7df9f9;
+}
+.tasks{
+    padding: 20px 0;
+    border-top: 1px solid #00000070;
+}
+.tasks img{
+    width: 60%;
+}
+.tasks .res{
+    margin-top: 20px;
+}
+.show{
+    margin: 10px 0;
+}
+.up{
+    padding-top: 15px;
+}
+ol > li{
+    margin-left: 20px;
+}
+
+/* ====================стилизация кнопок бургера======================= */
+/* Burger_style_button*/
+.ham {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%;
+}
+
+.hamRotate.active {
+    transform: rotate(45deg);
+}
+
+.hamRotate180.active {
+    transform: rotate(180deg);
+}
+
+.line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: #1c22ff;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+}
+
+.ham1 .top {
+    stroke-dasharray: 40 139;
+}
+
+.ham1 .bottom {
+    stroke-dasharray: 40 180;
+}
+
+.ham1.active .top {
+    stroke-dashoffset: -98px;
+}
+
+.ham1.active .bottom {
+    stroke-dashoffset: -138px;
+}
+
+/* END Burger_style_button*/
+
+.logos{
+    max-width: 10%;
+    height: auto;
+}
+
+
+
+/* =============================MEDIA============================== */
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 991px){
+    .tasks img {
+        width: 100%;
+    }
+    .main-header .navbar-nav > li {
+        margin-right: unset;
+        justify-content: center;
+        display: flex;
+    }
+    .main-header .navbar-nav > li{
+        background: #90e2f45e;
+        margin-bottom: 5px;
+    }
+    .main-header ul.navbar-nav {
+        margin-right: unset;
+    }
+    .main-header ul li a:hover {
+        color: #ffbc0c;
+        transition: 0.5s;
+    }
+}
+
+@media (max-width: 767px){
+    .card-body {
+        padding: 5px;
+    }
+}
+
+@media (max-width: 575px){
+    .base .first_text {
+        padding: 15px 15px;
+    }
+    .h4, h4 {
+        font-size: 16px;
+    }
+    ol{
+        font-size: 12px;
+    }
+    p{
+        font-size: 12px;
+    }
+    .show{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 320px){
+
+}

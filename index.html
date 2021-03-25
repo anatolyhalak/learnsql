@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8" />
+    <base href="learnsql.ru" />
+    <meta name="keywords" content="изучение языка запросов SQL, базы данных" />
+    <meta name="description" content="Сайт learnsql.ru: будет полезен для изучения языка запросов SQL" />
+    <title>learnsql: язык запросов, создание баз данных и запросы к базам данных.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/jquery.fancybox.min.css" rel="stylesheet" />
+    <link href="css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    <style>
+
+        h1, h2, h3, h4, h5, h6, .site-title {
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.4.1.min.js?eeaa38f54cf7d09f1c475115144a95ce"></script>
+    <script src="js/bootstrap.min.js?eeaa38f54cf7d09f1c475115144a95ce"></script>
+    <script src="js/bootstrap.min.js?eeaa38f54cf7d09f1c475115144a95ce"></script>
+    <script src="js/owl.carousel.min.js?eeaa38f54cf7d09f1c475115144a95ce"></script>
+    <script src="js/jquery.fancybox.min.js?eeaa38f54cf7d09f1c475115144a95ce"></script>
+    <script src="js/main.js"></script>
+    <script>
+        jQuery(window).on('load',  function() {
+            new JCaption('img.caption');
+        });
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,700i,900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+<div class="container">
+    <div class="row">
+        <header class="main-header">
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="/">
+            <img class="logos" src="./img/icon/thumb.jpg" alt=""> Learnsql.ru
+        </a>
+        <div class="burgers">
+            <button class="menu_btn navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg class="ham hamRotate ham1" viewBox="0 0 100 100" width="80"
+                     onclick="this.classList.toggle('active')">
+                    <path class="line top" d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"/>
+                    <path class="line middle" d="m 30,50 h 40"/>
+                    <path class="line bottom" d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"/>
+                </svg>
+                <!--<i class="fas fa-bars"></i>-->
+            </button>
+        </div>
+        <div id="navbarSupportedContent" class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="/blog">BOOKS</a></li>
+                <li class="nav-item"><a class="nav-link" href="/proekty">TASK</a></li>
+                <li class="nav-item"><a class="nav-link" href="/tekhnologii">TEST</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+    </div>
+</div>
+<body>
+    <div class="container base">
+        <div class="row">
+            <div class="first_text">
+                <p class="boxsql">Создание данного сайта явилось желание сделать конспект по языку запросов SQL.
+                В основе конспект из готовых задании и решении задач по SQL, так как Базы данных для тренировки тут нет, то ниже указаны задачи и ответы на них.
+                Примеры помогут вспомнить как должен выглядеть такой-то запрос, а ответ на них поможет сравнить на сколько верно написан запрос.
+                В разделах Book собраны популярные книги по SQL и базам данных и есть ссылки на ресурсы, где можно их скачать. В разделе Task указаны популярные задачники и тренажеры по SQL.
+                Сайт будет периодически пополняться тематической информацией.</p>
+            </div>
+        </div>
+    </div>
+<div class="container up">
+    <div class="row tasks">
+        <span class="h4">Вставка записи в таблицу</span>
+        <ol>Для занесения новой записи в таблицу используется SQL запрос, в котором указывается в какую таблицу, в какие поля заносить новые значения. Структура запроса:
+            <li>ключевые слова INSERT INTO;</li>
+            <li>имя таблицы, в которую добавляется запись;</li>
+            <li>открывающая круглая скобка «(»;</li>
+            <li>список полей через запятую, в которые следует занести новые данные;</li>
+            <li>закрывающая скобка «)»;</li>
+            <li>ключевое слово VALUES;</li>
+            <li>открывающая круглая скобка «(»;</li>
+            <li>список значений через запятую, которые заносятся в соответствующие поля, при этом текстовые значения заключаются в кавычки,
+                числовые значения записываются без кавычек, в качестве разделителя целой и дробной части используется точка;</li>
+            <li>закрывающая скобка «)».</li>
+        </ol>
+        <img src="img/sql/task1-1.png" alt="">
+            <span class="h4">Задание:</span>
+        <p>Занесите новую строку в таблицу <b>book</b> (текстовые значения <b>(тип VARCHAR)</b> заключать либо в двойные, либо в одинарные кавычки):</p>
+            <img src="img/sql/task1.png" alt="">
+            <p class="res">Результат:</p>
+            <img src="img/sql/res11.png" alt="">
+    </div>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <img src="img/sql/answ1.png" alt="">
+            </div>
+        </div>
+        <a id="show_all" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+           aria-controls="collapseExample" class="show">
+            Показать решение
+        </a>
+</div>
+
+<div class="container up">
+        <div class="row tasks">
+            <span class="h4">Задание:</span>
+            <p>Занесите три последние записи в таблицу <b>book</b>,  первая запись уже добавлена на предыдущем шаге:</p>
+            <img src="img/sql/task2.png" alt="">
+            <p class="res">Результат:</p>
+            <img src="img/sql/res2.png" alt="">
+        </div>
+            <div class="collapse" id="collapseExample1">
+                <div class="card card-body">
+                    <img src="img/sql/answ22.png" alt="">
+                </div>
+            </div>
+            <a id="show_all1" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false"
+               aria-controls="collapseExample1" class="show">
+                Показать решение
+            </a>
+</div>
+
+    <div class="container up">
+            <div class="row tasks">
+                <span class="h4">Выборка отдельных столбцов и присвоение им имен</span>
+                <ol> Для того чтобы отобрать  данные из определенных столбцов таблицы и одновременно задать столбцам другие имена (псевдонимы) используется SQL запрос следующей структуры:
+                    <li>ключевое слово SELECT;</li>
+                    <li>имя столбца;</li>
+                    <li>ключевое слово AS;</li>
+                    <li>название столбца - псевдоним (можно русскими буквами), но это должно быть одно слово, если название состоит из двух слов – соединяйте их подчеркиванием, например, Количество_книг;</li>
+                    <li>запятая;</li>
+                    <li>имя столбца;</li>
+                    <li>....</li>
+                    <li>ключевое слово FROM;</li>
+                    <li>имя таблицы.</li>
+                </ol>
+                <p>Результатом является таблица, в которую включены все данные из указанных после  SELECT столбцов исходной таблицы.
+                    Каждому столбцу присваивается  имя, заданное после AS, или столбец получает имя столбца исходной таблицы, если AS отсутствует.</p>
+                <span class="h4">Задание:</span>
+                <p>Выбрать названия книг и авторов из таблицы <b>book</b>, для поля <b>title</b> задать имя(псевдоним) <b>Название</b>, для поля <b>author –  Автор</b>:</p>
+                <p class="res">Результат:</p>
+                <img src="img/sql/res33.png" alt="">
+            </div>
+                <div class="collapse" id="collapseExample2">
+                    <div class="card card-body">
+                        <img src="img/sql/answ3.png" alt="">
+                    </div>
+                </div>
+                <a id="show_all2" data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false"
+                   aria-controls="collapseExample2" class="show">
+                    Показать решение
+                </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Выборка данных с созданием вычисляемого столбца</span>
+            <p>
+                С помощью SQL запросов можно осуществлять вычисления по каждой строке таблицы с помощью вычисляемого столбца.
+                Для него в списке полей  после оператора SELECT указывается выражение и задается имя.
+            </p>
+            <p>
+                Выражение может включать имена столбцов, константы, знаки операций, встроенные функции.
+            </p>
+            <p>
+                Результатом является таблица, в которую включены все данные из указанных после  SELECT столбцов, а также новый столбец, в каждой строке которого вычисляется заданное выражение.
+            </p>
+            <img src="img/sql/task3.png" alt="">
+            <span class="h4">Задание:</span>
+            <p>Для упаковки каждой книги требуется 1 лист бумаги, цена которого 1 рубль 65 копеек.
+                Посчитать стоимость упаковки для каждой книги (сколько денег потребуется, чтобы упаковать все экземпляры книги).
+                В запросе вывести название книги, ее количество и стоимость упаковки, последний столбец назвать <b>pack</b>.</p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res44.png" alt="">
+        </div>
+        <div class="collapse" id="collapseExample3">
+            <div class="card card-body">
+                <img src="img/sql/answ44.png" alt="">
+            </div>
+        </div>
+        <a id="show_all3" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false"
+           aria-controls="collapseExample3" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Выборка данных, вычисляемые столбцы, математические функции</span>
+            <p>В SQL реализовано множество  математических функций для работы с числовыми данными. В таблице приведены некоторые из них.</p>
+            <img src="img/sql/task5.png" alt="">
+            <ol><b>Пояснение:</b>
+                <li>Существуют разные способы округления чисел.
+                    В SQL реализовано математическое округление.
+                    Для округления вещественного числа нужно в записи числа выбрать разряд в дробной части, до которого производится округление.
+                    Цифра, записанная в выбранном разряде: не меняется, если следующая за ней справа цифра - 0, 1, 2, 3 или 4;
+                    увеличивается на единицу, если следующая за ней справа цифра - 5,6,7,8 или 9.</li>
+            </ol>
+            <img src="img/sql/task4-1.png" alt="">
+            <span class="h4 mt-3">Задание:</span>
+            <p>В конце года цену всех книг на складе пересчитывают – снижают ее на 30%.
+            Написать SQL запрос, который из таблицы <b>book</b> выбирает названия, авторов, количества и вычисляет новые цены книг.
+                Столбец с новой ценой назвать <b>new_price</b>, цену округлить до 2-х знаков после запятой.</p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res5.png" alt="">
+        </div>
+        <div class="collapse" id="collapseExample4">
+            <div class="card card-body">
+                <img src="img/sql/answ5.png" alt="">
+            </div>
+        </div>
+        <a id="show_all4" data-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false"
+           aria-controls="collapseExample4" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Выборка данных, вычисляемые столбцы, логические функции</span>
+            <p>В SQL реализована возможность заносить в поле значение в зависимости от условия. Для этого используется функция IF:</p>
+            <p>IF(логическое_выражение, выражение_1, выражение_2)</p>
+            <p>Функция вычисляет логическое_выражение, если оно истина – в поле заносится значение выражения_1,
+                в противном случае –  значение выражения_2. Все три параметра IF() являются обязательными.</p>
+            <p>Допускается использование вложенных функций, вместо выражения_1 или выражения_2 может стоять новая функция IF.</p>
+            <span class="h4">Задание:</span>
+            <p>При анализе продаж книг выяснилось, что наибольшей популярностью пользуются книги Михаила Булгакова, на втором месте книги Сергея Есенина.
+            Исходя из этого решили поднять цену книг Булгакова на 10%, а цену книг Есенина - на 5%.
+                Написать запрос, куда включить автора, название книги и новую цену, последний столбец назвать new_price. Значение округлить до двух знаков после запятой.</p>
+            <ol><b>Пояснение:</b>
+                <li>фамилию автора задавать с инициалами (как занесено в таблице), заключая в одинарные или двойные кавычки;</li>
+                <li>для сравнения на равенство использовать знак =, например <b>author="Булгаков М.А."</b>.</li>
+            </ol>
+            <img src="img/sql/task6.png" alt="">
+            <img src="img/sql/task66.png" alt="">
+            <p class="res">Результат:</p>
+            <img src="img/sql/res6.png" alt="">
+        </div>
+        <div class="collapse" id="collapseExample5">
+            <div class="card card-body">
+                <img src="img/sql/answ6.png" alt="">
+            </div>
+        </div>
+        <a id="show_all5" data-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false"
+           aria-controls="collapseExample5" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Выборка данных по условию</span>
+            <p>
+                С помощью запросов можно включать в итоговую выборку не все строки исходной таблицы, а только те,
+                которые отвечают некоторому условию. Для этого после указания таблицы, откуда выбираются данные,
+                задается ключевое слово WHERE и логическое выражение, от результата которого зависит будет ли включена строка в выборку или нет.
+                Если условие – истина, то строка(запись)  включается в выборку, если ложь – нет.
+            </p>
+            <p>
+                Логическое выражение может включать операторы сравнения (равно «=», не равно «<>», больше «>», меньше «<»,
+                больше или равно«>=», меньше или равно «<=») и выражения, допустимые в SQL.
+            </p>
+            <img src="img/sql/task7.png" alt="">
+            <span class="h4">Задание:</span>
+            <p>При анализе продаж книг выяснилось, что наибольшей популярностью пользуются книги Михаила Булгакова, на втором месте книги Сергея Есенина.
+                Исходя из этого решили поднять цену книг Булгакова на 10%, а цену книг Есенина - на 5%.
+                Написать запрос, куда включить автора, название книги и новую цену, последний столбец назвать new_price. Значение округлить до двух знаков после запятой.</p>
+            <ol><b>Пояснение:</b>
+                <li>фамилию автора задавать с инициалами (как занесено в таблице), заключая в одинарные или двойные кавычки;</li>
+                <li>для сравнения на равенство использовать знак =, например <b>author="Булгаков М.А."</b>.</li>
+            </ol>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res7.png" alt="">
+        </div>
+        <div class="collapse" id="collapseExample6">
+            <div class="card card-body">
+                <img src="img/sql/answ7.png" alt="">
+            </div>
+        </div>
+        <a id="show_all6" data-toggle="collapse" href="#collapseExample6" role="button" aria-expanded="false"
+           aria-controls="collapseExample6" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Выборка данных, логические операции</span>
+            <p>Логическое выражение после ключевого слова WHERE кроме операторов сравнения
+                и выражений может включать <b>логические операции</b> (И <b>«and»</b>, ИЛИ <b>«or»</b>, НЕ <b>«not»</b>) и круглые скобки, изменяющие приоритеты выполнения операций.</p>
+            <ol><b>Приоритеты операций:</b>
+                <li>круглые скобки</li>
+                <li>умножение  (*),  деление (/)</li>
+                <li>сложение  (+), вычитание (-)</li>
+                <li>операторы сравнения (=, >, <, >=, <=, <>)</li>
+                <li>NOT</li>
+                <li>AND</li>
+                <li>OR</li>
+            </ol>
+            <img src="img/sql/task8.png" alt="">
+            <span class="h4 mt-2">Задание:</span>
+            <p>Вывести название, автора,  цену  и количество всех книг, цена которых меньше 500 или больше 600, а стоимость всех экземпляров этих книг больше или равна 5000.</p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res8.png" alt="">
+        </div>
+        <div class="collapse" id="collapseExample7">
+            <div class="card card-body">
+                <img src="img/sql/answ8.png" alt="">
+            </div>
+        </div>
+        <a id="show_all7" data-toggle="collapse" href="#collapseExample7" role="button" aria-expanded="false"
+           aria-controls="collapseExample7" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Выборка данных, операвторы <b>BETWEEN, IN</b></span>
+            <p>Логическое выражение после ключевого слова <b>WHERE</b> может включать операторы  <b>BETWEEN и IN</b>.
+                Приоритет  у этих операторов такой же как у операторов сравнения, то есть они выполняются раньше, чем <b>NOT, AND, OR</b>.</p>
+            <p>Оператор <b>BETWEEN</b> позволяет отобрать данные, относящиеся к некоторому интервалу, включая его границы.</p>
+            <img src="img/sql/task9.png" alt="">
+            <span class="h4 mt-2">Задание:</span>
+            <p>Вывести название и авторов тех книг, цены которых принадлежат интервалу от 540.50 до 800 (включая границы),  а количество или 2, или 3, или 5, или 7 .</p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res9.png" alt="">
+        </div>
+        <div class="collapse" id="collapseExample8">
+            <div class="card card-body">
+                <img src="img/sql/answ9.png" alt="">
+            </div>
+        </div>
+        <a id="show_all8" data-toggle="collapse" href="#collapseExample8" role="button" aria-expanded="false"
+           aria-controls="collapseExample8" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Выборка данных, операвтор <b>LIKE</b></span>
+            <p>Оператор LIKE используется для сравнения строк.
+                В отличие от операторов отношения равно (=) и не равно (<>), LIKE позволяет сравнивать строки не на полное совпадение (не совпадение),
+                а в соответствии с шаблоном. Шаблон может включать <b>обычные символы</b> и <b>символы-шаблоны</b>.
+                При сравнении с шаблоном, его обычные символы должны в точности совпадать с символами, указанными в строке.
+                Символы-шаблоны могут совпадать с произвольными элементами символьной строки.</p>
+            <img src="img/sql/task10.png" alt="">
+            <img src="img/sql/task10-1.png" alt="">
+            <img src="img/sql/task10-2.png" alt="">
+            <span class="h4 mt-2">Задание:</span>
+            <p>Вывести название и автора тех книг, название которых состоит из двух и более слов, а инициалы автора содержат букву «С».
+                Считать, что в названии слова отделяются друг от друга пробелами и не содержат знаков препинания,
+                между фамилией автора и инициалами обязателен пробел, инициалы записываются без пробела в формате: буква, точка, буква, точка.</p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res10.png" alt="">
+            <ol class="mt-2"><b>Пояснение:</b>
+                <li>При записи условия, необходимо учесть, что слово в названии обязательно должно содержать  хотя бы один символ.</li>
+                <li>Инициалы в этом задании - это первая буква имени или отчества, после которой стоит точка.</li>
+            </ol>
+        </div>
+        <div class="collapse" id="collapseExample9">
+            <div class="card card-body">
+                <img src="img/sql/answ10.png" alt="">
+            </div>
+        </div>
+        <a id="show_all9" data-toggle="collapse" href="#collapseExample9" role="button" aria-expanded="false"
+           aria-controls="collapseExample9" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Выборка данных сортировкой</span>
+            <p>При выборке можно указывать столбец или несколько столбцов, по которым необходимо отсортировать отобранные строки.
+                Для этого используются ключевые слова <b>ORDER BY</b>, после которых задаются имена столбцов.
+                При этом строки сортируются по первому столбцу, если указан второй столбец, сортировка осуществляется только для тех строк, у которых значения первого столбца одинаковы.
+                По умолчанию <b>ORDER BY</b> выполняет сортировку по возрастанию.
+                Чтобы управлять направлением сортировки вручную, после имени столбца указывается ключевое слово <b>ASC</b> (по возрастанию) или <b>DESC</b> (по убыванию). </p>
+            <ol><b>Логический порядок операций для запроса SQL следующий:</b>
+                <li>FROM</li>
+                <li>WHERE</li>
+                <li>SELECT</li>
+                <li>ORDER BY</li>
+            </ol>
+            <p>
+                Поскольку сортировка выполняется позже <b>SELECT</b>, для указания столбцов,
+                по которым выполняется сортировка, можно использовать имена, присвоенные им после <b>SELECT</b>, а также порядковый номер столбца в перечислении.
+            </p>
+            <img src="img/sql/task11.png" alt="">
+            <span class="h4 mt-2">Задание:</span>
+            <p>Вывести  автора и название  книг, количество которых принадлежит интервалу от 2 до 14 (включая границы).
+                Информацию  отсортировать по авторам (в обратном алфавитном порядке) и названиям (по алфавиту).</p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res11-1.png" alt="">
+        </div>
+        <div class="collapse" id="collapseExample10">
+            <div class="card card-body">
+                <img src="img/sql/answ11.png" alt="">
+            </div>
+        </div>
+        <a id="show_all10" data-toggle="collapse" href="#collapseExample10" role="button" aria-expanded="false"
+           aria-controls="collapseExample10" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Выборка данных, групповые функции <b>SUM и COUNT</b></span>
+            <p>При группировке над элементами столбца, входящими в группу можно выполнить различные действия, например, просуммировать их или найти количество элементов в группе.</p>
+            <p>
+                При группировке данных таблицы <b>book</b> по столбцу <b>author</b>,  получается три группы.
+                В первую группу входят две строки, в поле <b>author</b> которых стоит значение «Булгаков М.А.».
+                В столбце <b>amount</b> к этой группе относится значения 3 и 5.
+                Просуммировав эти значения, можно узнать общее количество книг Булгакова на складе.
+                Для этого используется групповая функция <b>SUM()</b>. В скобках указывается столбец, по которому осуществляется суммирование.
+            </p>
+            <img src="img/sql/task12.png" alt="">
+            <span class="h4 mt-2">Задание:</span>
+            <p>Вывести  автора и название  книг, количество которых принадлежит интервалу от 2 до 14 (включая границы).
+                Информацию  отсортировать по авторам (в обратном алфавитном порядке) и названиям (по алфавиту).</p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res12.png" alt="">
+            <ol class="mt-2"><b>Пояснение:</b>
+                <li>Название столбцов может состоять из нескольких слов, тогда их нужно заключать в кавычки.
+                    Но если слова написать через подчеркивание, тогда получится , что название состоит из одного слова, и кавычки можно не ставить. </li>
+            </ol>
+        </div>
+        <div class="collapse" id="collapseExample11">
+            <div class="card card-body">
+                <img src="img/sql/answ12.png" alt="">
+            </div>
+        </div>
+        <a id="show_all11" data-toggle="collapse" href="#collapseExample11" role="button" aria-expanded="false"
+           aria-controls="collapseExample11" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Выборка данных, групповые функции <b>MIN, MAX и AVG</b></span>
+            <p>
+                К групповым функциям SQL относятся: <b>MIN(), MAX() и AVG()</b>, которые вычисляют минимальное, максимальное и среднее значение элементов столбца, относящихся к группе.
+            </p>
+            <img src="img/sql/task13.png" alt="">
+            <span class="h4 mt-2">Задание:</span>
+            <p>Вывести минимальную, максимальную и среднюю цену книг каждого автора . Вычисляемые столбцы назвать <b>Минимальная_цена, Максимальная_цена и Средняя_цена</b> соответственно.</p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res13.png" alt="">
+        </div>
+        <div class="collapse" id="collapseExample12">
+            <div class="card card-body">
+                <img src="img/sql/answ13.png" alt="">
+            </div>
+        </div>
+        <a id="show_all12" data-toggle="collapse" href="#collapseExample12" role="button" aria-expanded="false"
+           aria-controls="collapseExample12" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Выборка данных с вычислением, групповые функции </span>
+            <p>
+                В качестве аргумента групповых функций  SQL может использоваться не только столбец, но и любое допустимое в SQL арифметическое выражение.
+            </p>
+            <img src="img/sql/task14.png" alt="">
+            <span class="h4 mt-2">Задание:</span>
+            <p>
+                Для каждого автора вычислить суммарную стоимость книг S (имя столбца Стоимость),
+                а также вычислить налог на добавленную стоимость  для полученных сумм (имя столбца НДС ) ,
+                который включен в стоимость и составляет k = 18%,  а также стоимость книг  (Стоимость_без_НДС) без него.
+                Значения округлить до двух знаков после запятой. В запросе для расчета НДС(tax)  и Стоимости без НДС(S_without_tax) использовать следующие формулы:
+            </p>
+            <img src="img/sql/task14-1.png" alt="">
+            <p class="res">Результат:</p>
+            <img src="img/sql/res14.png" alt="">
+            <ol class="mt-2"><b>Пояснение:</b>
+                <li>Имена столбцов, присвоенные им с помощью AS, нельзя использовать в выражениях, используйте названия столбцов исходной таблицы. </li>
+            </ol>
+        </div>
+        <div class="collapse" id="collapseExample13">
+            <div class="card card-body">
+                <img src="img/sql/answ14.png" alt="">
+            </div>
+        </div>
+        <a id="show_all13" data-toggle="collapse" href="#collapseExample13" role="button" aria-expanded="false"
+           aria-controls="collapseExample13" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Вычесление по таблице целиком</span>
+            <p>
+                Групповые функции позволяют вычислять итоговые значения по всей таблице.
+                Например, можно посчитать общее количество книг на складе, вычислить суммарную стоимость и пр.
+                Для этого после ключевого слова SELECT указывается групповая функция для выражения или имени столбца, а ключевые слова GROUP BY опускаются.
+            </p>
+            <img src="img/sql/task15.png" alt="">
+            <span class="h4 mt-2">Задание:</span>
+            <p>
+                Вывести  цену самой дешевой книги, цену самой дорогой и среднюю цену книг на складе.
+                Названия столбцов Минимальная_цена, Максимальная_цена, Средняя_цена соответственно. Среднюю цену округлить до двух знаков после запятой.
+            </p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res15.png" alt="">
+        </div>
+        <div class="collapse" id="collapseExample14">
+            <div class="card card-body">
+                <img src="img/sql/answ15.png" alt="">
+            </div>
+        </div>
+        <a id="show_all14" data-toggle="collapse" href="#collapseExample14" role="button" aria-expanded="false"
+           aria-controls="collapseExample14" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Выборка данных по условию, групповые функции</span>
+            <p>
+                В запросы с групповыми функциями можно включать условие отбора строк, которое в обычных запросах записывается после <b>WHERE</b>.
+                В запросах с групповыми функциями вместо <b>WHERE</b> используется ключевое слово <b>HAVING</b> , которое размещается после оператора <b>GROUP BY</b>.
+            </p>
+            <img src="img/sql/task16.png" alt="">
+            <span class="h4 mt-2">Задание:</span>
+            <p>
+                Вычислить среднюю цену и суммарную стоимость тех книг, количество экземпляров которых принадлежит интервалу от 5 до 14, включительно.
+                Столбцы переименовать как показано в образце, значения округлить до 2-х знаков после запятой.
+            </p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res16.png" alt="">
+            <ol class="mt-2"><b>Пояснение:</b>
+                <li>Если в запросе с групповыми функциями отсутствует <b>GROUP BY</b>, то для отбора записей используется ключевое слово <b>WHERE</b>.</li>
+            </ol>
+        </div>
+        <div class="collapse" id="collapseExample15">
+            <div class="card card-body">
+                <img src="img/sql/answ16.png" alt="">
+            </div>
+        </div>
+        <a id="show_all15" data-toggle="collapse" href="#collapseExample15" role="button" aria-expanded="false"
+           aria-controls="collapseExample15" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Выборка данных по условию, групповые функции, WHERE и HAVING</span>
+            <ol><b>WHERE и HAVING могут использоваться в одном запросе. При этом необходимо учитывать порядок выполнения  SQL запроса на выборку на сервере:</b>
+                <li>FROM</li>
+                <li>WHERE</li>
+                <li>GROUP BY</li>
+                <li>HAVING</li>
+                <li>SELECT</li>
+                <li>ORDER BY</li>
+            </ol>
+            <p>
+                Сначала определяется таблица, из которой выбираются данные (<b>FROM</b>), затем из этой таблицы отбираются записи в соответствии с условием  WHERE,
+                выбранные данные агрегируются (<b>GROUP BY</b>),  из агрегированных записей выбираются те, которые удовлетворяют условию после HAVING.
+                Потом формируются данные результирующей выборки, как это указано после <b>SELECT</b> ( вычисляются выражения, присваиваются имена и пр. ).
+                Результирующая выборка сортируется, как указано после ORDER BY.
+            </p>
+            <p>
+                Важно! Порядок ВЫПОЛНЕНИЯ запросов - это не порядок ЗАПИСИ ключевых слов в запросе на выборку.
+                Порядок записи (синтаксис запроса) остается таким же, как рассматривался ранее в курсе.
+                Порядок ВЫПОЛНЕНИЯ  нужен для того, чтобы понять, почему, например, в <b>WHERE</b> нельзя использовать имена выражений из <b>SELECT</b>.
+                Просто <b>SELECT</b> выполняется компилятором позже, чем <b>WHERE</b>, поэтому ему неизвестно, какое там выражение написано.
+            </p>
+            <img src="img/sql/task17.png" alt="">
+            <span class="h4 mt-2">Задание:</span>
+            <p>
+                Посчитать стоимость всех экземпляров каждого автора без учета книг «Идиот» и «Белая гвардия».
+                В результат включить только тех авторов, у которых суммарная стоимость книг более 5000 руб. Результат отсортировать по убыванию стоимости.
+            </p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res17.png" alt="">
+        </div>
+        <div class="collapse" id="collapseExample16">
+            <div class="card card-body">
+                <img src="img/sql/answ17.png" alt="">
+            </div>
+        </div>
+        <a id="show_all16" data-toggle="collapse" href="#collapseExample16" role="button" aria-expanded="false"
+           aria-controls="collapseExample16" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Вложеный запрос, возвращающий одно значение</span>
+            <p>
+                Вложенный запрос, возвращающий одно значение, может использоваться в условии отбора записей WHERE как обычное значение совместно с операциями <b>=, <>, >=, <=, >, <</b>.
+            </p>
+            <img src="img/sql/task18.png" alt="">
+            <span class="h4 mt-2">Задание:</span>
+            <p>
+                Вывести информацию (автора, название и цену) о  книгах, цены которых меньше или равны средней цене книг на складе.
+                Информацию вывести в отсортированном по убыванию цены виде. Среднее вычислить как среднее по цене книги.
+            </p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res18.png" alt="">
+        </div>
+        <div class="collapse" id="collapseExample17">
+            <div class="card card-body">
+                <img src="img/sql/answ18.png" alt="">
+            </div>
+        </div>
+        <a id="show_all17" data-toggle="collapse" href="#collapseExample17" role="button" aria-expanded="false"
+           aria-controls="collapseExample17" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Использование вложенного запроса в выражении</span>
+            <p>
+                Вложенный запрос, возвращающий одно значение, может использоваться в выражениях как обычный операнд, например, к нему можно что-то прибавить, отнять и пр.
+            </p>
+            <img src="img/sql/task19.png" alt="">
+            <span class="h4 mt-2">Задание:</span>
+            <p>
+                Вывести информацию (автора, название и цену) о тех книгах,
+                цены которых превышают минимальную цену книги на складе не более чем на 150 рублей в отсортированном по возрастанию цены виде.
+            </p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res19.png" alt="">
+        </div>
+        <div class="collapse" id="collapseExample18">
+            <div class="card card-body">
+                <img src="img/sql/answ19.png" alt="">
+            </div>
+        </div>
+        <a id="show_all18" data-toggle="collapse" href="#collapseExample18" role="button" aria-expanded="false"
+           aria-controls="collapseExample18" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Вложеный запрос, оператор IN</span>
+            <p>
+                Вложенный запрос может возвращать несколько значений одного столбца.
+                Оператор <b>IN</b> определяет, совпадает ли указанное в логическом выражении значение с одним из значений, содержащихся во вложенном запросе ,
+                при этом логическое выражение получает значение истина.
+                Оператор <b>NOT IN</b> выполняет обратное действие – выражение истинно, если значение не содержится во вложенном запросе.
+            </p>
+            <img src="img/sql/task20.png" alt="">
+            <span class="h4 mt-2">Задание:</span>
+            <p>
+                Вывести информацию (автора, название и цену) о тех книгах,
+                цены которых превышают минимальную цену книги на складе не более чем на 150 рублей в отсортированном по возрастанию цены виде.
+            </p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res20.png" alt="">
+            <ol class="mt-2"><b>Пояснение:</b>
+                <li>Во вложенном запросе отберите те значения столбца amount, количество которых, вычисленное с помощью функции count(), равно 1. </li>
+            </ol>
+        </div>
+        <div class="collapse" id="collapseExample19">
+            <div class="card card-body">
+                <img src="img/sql/answ20.png" alt="">
+            </div>
+        </div>
+        <a id="show_all19" data-toggle="collapse" href="#collapseExample19" role="button" aria-expanded="false"
+           aria-controls="collapseExample19" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Вложеный запрос, оператор <b>ANY и ALL</b></span>
+            <p>
+                Вложенный запрос, возвращающий несколько значений одного столбца,
+                можно использовать для отбора записей с помощью операторов ANY и ALL совместно с операциями отношения (=, <>, <=, >=, <, >).
+            </p>
+            <p>
+                Операторы ANY и ALL используются  в SQL для сравнения некоторого значения с результирующим набором вложенного запроса, состоящим из одного столбца.
+                При этом тип данных столбца, возвращаемого вложенным запросом, должен совпадать с типом данных столбца (или выражения), с которым происходит сравнение.
+            </p>
+            <img src="img/sql/task21.png" alt="">
+            <img src="img/sql/task21-1.png" alt="">
+            <span class="h4 mt-2">Задание:</span>
+            <p>
+                Вывести информацию о книгах(автор, название, цена), цена которых меньше самой большой из минимальных цен, вычисленной для каждого автора.
+            </p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res21.png" alt="">
+        </div>
+        <div class="collapse" id="collapseExample20">
+            <div class="card card-body">
+                <img src="img/sql/answ21.png" alt="">
+            </div>
+        </div>
+        <a id="show_all20" data-toggle="collapse" href="#collapseExample20" role="button" aria-expanded="false"
+           aria-controls="collapseExample20" class="show">
+            Показать решение
+        </a>
+    </div>
+
+    <div class="container up">
+        <div class="row tasks">
+            <span class="h4">Вложеный запрос после <b>SELECT</b></span>
+            <p>
+                Вложенный запрос может располагаться после ключевого слова SELECT. В этом случае результат выполнения запроса выводится в отдельном столбце результирующей таблицы.
+                При этом результатом запроса может быть либо одно значение, тогда оно будет повторяться во всех строках, либо несколько значений, количество которых равно количеству отобранных записей в основном запросе.
+            </p>
+            <img src="img/sql/task22.png" alt="">
+            <span class="h4 mt-2">Задание:</span>
+            <p>
+                Посчитать сколько и каких экземпляров книг нужно заказать поставщикам, чтобы на складе было одинаковое количество экземпляров каждой книги, равное значению самого большего количества экземпляров одной книги на складе.
+                Столбцу с количеством заказываемых экземпляров книг присвоить имя <b>Заказ</b>.
+            </p>
+            <p class="res">Результат:</p>
+            <img src="img/sql/res22.png" alt="">
+            <ol class="mt-2"><b>Пояснение:</b>
+                <li>Поскольку книгу с максимальным количеством экземпляров заказывать не нужно,
+                    в условии отбора запроса укажите, что книгу с максимальным значением количества в результирующую таблицу не включать. </li>
+            </ol>
+        </div>
+        <div class="collapse" id="collapseExample21">
+            <div class="card card-body">
+                <img src="img/sql/answ22-1.png" alt="">
+            </div>
+        </div>
+        <a id="show_all21" data-toggle="collapse" href="#collapseExample21" role="button" aria-expanded="false"
+           aria-controls="collapseExample21" class="show">
+            Показать решение
+        </a>
+    </div>
+
+
+</body>
+</html>
+
+<!--Остановился на том что подключил бургер и хедер.
+1)Сделать главную страницу сначало десктоп
+2)Подключить  другие страницы
+3)Оформить другие старницы
+4)Сделать адаптивность
+5)Сделать кроссбраузерность
+6)Проверить на валидаторах
+7)Пройтись по чек-лситу
+
+-->
